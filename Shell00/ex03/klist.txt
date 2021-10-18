@@ -1,0 +1,5 @@
+Credentials cache: API:63180B2A-83F3-4E32-902E-66C5E52C4536
+        Principal: afalcone@42ROMA.IT
+
+  Issued                Expires               Principal
+Sep 29 11:15:03 2021  Sep 29 21:15:03 2021  krbtgt/42ROMA.IT@42ROMA.IT
