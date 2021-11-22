@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalcone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:41:53 by afalcone          #+#    #+#             */
-/*   Updated: 2021/10/13 19:10:20 by afalcone         ###   ########.fr       */
+/*   Created: 2021/10/12 22:33:28 by ancarbon          #+#    #+#             */
+/*   Updated: 2021/10/13 14:37:03 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	x;
+	unsigned int	idx;
 
-	x = 0;
-	while (s1[x] != '\0' && s2[x] != '\0' && s1[x] == s2[x])
-	{
-		x++;
-	}
-	return (s1[x] - s2[x]);
+	idx = 0;
+	while (s1[idx] && s2[idx] && s1[idx] == s2[idx])
+		idx++;
+	return (s1[idx] - s2[idx]);
 }

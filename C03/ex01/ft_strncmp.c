@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalcone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 19:31:33 by afalcone          #+#    #+#             */
-/*   Updated: 2021/10/13 19:13:14 by afalcone         ###   ########.fr       */
+/*   Created: 2021/10/12 22:36:29 by ancarbon          #+#    #+#             */
+/*   Updated: 2021/10/13 14:37:21 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	while (*s1 != '\0' && *s2 != '\0' && n > 0)
-	{
-		if (*s1 != *s2)
-			break ;
-		s1++;
-		s2++;
-		n--;
-	}
+	unsigned int	idx;
+
 	if (n == 0)
 		return (0);
-	return (*s1 - *s2);
+	idx = 0;
+	while (s1[idx] && s2[idx] && s1[idx] == s2[idx] && idx < n)
+		idx++;
+	if (idx == n)
+		idx--;
+	return (s1[idx] - s2[idx]);
 }

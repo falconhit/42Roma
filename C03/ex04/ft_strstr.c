@@ -1,29 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: afalcone <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 16:31:59 by afalcone          #+#    #+#             */
-/*   Updated: 2021/10/14 17:59:22 by afalcone         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 char	*ft_strstr(char *str, char *to_find)
 {
-	int	i;
-	int	y;
+	int	h;
+	int	n;
 
-	i = 0;
-	y = 0;
-	if (to_find == '\0')
-		return (str);
-	while (str[i] != '\0')
+	h = 0;
+	if (to_find[0] == '\0')
 	{
-		if (str[i] == to_find[y])
-			i++;
-		y++;
+		return (str);
 	}
-	return (&str[i + y]);
+	while (str[h] != '\0')
+	{
+		n = 0;
+		while (str[h + n] == to_find[n] && str[h + n] != '\0')
+		{
+			if (to_find[n + 1] == '\0')
+			{
+				return (&str[h]);
+			}
+			n++;
+		}
+		h++;
+	}
+	return (0);
 }

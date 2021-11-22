@@ -3,29 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afalcone <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 16:20:32 by afalcone          #+#    #+#             */
-/*   Updated: 2021/10/14 17:56:58 by afalcone         ###   ########.fr       */
+/*   Created: 2021/10/12 22:43:27 by ancarbon          #+#    #+#             */
+/*   Updated: 2021/10/14 19:35:58 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int	i;
-	unsigned int	y;
+	unsigned int	idx;
+	unsigned int	s;
 
-	i = 0;
-	y = 0;
-	while (dest[i])
+	idx = 0;
+	s = 0;
+	while (dest[idx])
+		idx++;
+	while (src[s] && s < nb)
 	{
-		i++;
+		dest[idx + s] = src[s];
+		s++;
 	}
-	while (src[y] && y < nb)
-	{
-		dest[i + y] = src[y];
-		y++;
-	}
-	dest[i + y] = '\0';
+	dest[idx + s] = '\0';
 	return (dest);
 }
